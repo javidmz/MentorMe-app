@@ -1,0 +1,125 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5rem 02rem;
+  width: 350px;
+  height: 100%;
+  background-color: #ad1fea;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  a,
+  .logout-container,
+  .delete-account {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    div {
+      font-size: 1.5rem;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      border: 4px white solid;
+      padding: 1rem 0.75rem;
+      font-size: 2.5rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+  }
+
+  a:hover,
+  .logout-container:hover,
+  .delete-account:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
+
+  > a:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: red;
+
+    div {
+      height: 20px;
+    }
+  }
+
+  .delete-account {
+    div {
+      font-size: 1.25rem;
+      color: red;
+    }
+
+    svg {
+      color: red;
+    }
+  }
+}
+
+@media (max-width: 961px) {
+  .navbar {
+    width: 250px;
+    padding: 8rem 2rem;
+
+    .navigation {
+      gap: 0.9rem;
+    }
+
+    a,
+    .logout-container,
+    .delete-account {
+      div {
+        font-size: 1rem;
+        height: 1.5rem;
+      }
+
+      header {
+        font-size: 1.5rem;
+      }
+    }
+
+    a {
+      width: auto;
+    }
+
+    .delete-account {
+      div {
+        font-size: 1rem;
+        color: red;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    transform: translateX(-250px);
+    transition: all 0.3s ease-in;
+  }
+
+  .navbar.active {
+    transform: translateX(0);
+    z-index: 10;
+    box-shadow: 0 0 0 1600px rgba(0, 0, 0, 0.65);
+  }
+}

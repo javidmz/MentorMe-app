@@ -1,0 +1,74 @@
+.delete-ver-container {
+  width: 300px;
+  padding: 20px;
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  box-shadow: 0 0 0 1600px rgba(0, 0, 0, 0.65);
+  animation: DeleteVertAnimation 0.5s ease-out forwards;
+
+  .trash-can {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      font-size: 2rem;
+      color: red;
+    }
+  }
+
+  .delete-ver-header {
+    font-size: 2rem;
+  }
+
+  .delete-ver-footer {
+    display: flex;
+    gap: 0.8rem;
+
+    button {
+      outline: none;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      color: #f2f4fe;
+      font-size: 0.875rem;
+      font-weight: 700;
+      background-color: #3a4374;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+    }
+
+    button:last-child {
+      background-color: #d73737;
+    }
+
+    button:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+@keyframes DeleteVertAnimation {
+  from {
+    transform: translateX(-50%) translateY(calc(-50% - 50px));
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+  }
+}

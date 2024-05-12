@@ -1,0 +1,14 @@
+.chats-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 481px) {
+  .chats-container {
+    margin-top: 25px;
+    width: 90%;
+  }
+}

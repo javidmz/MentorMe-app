@@ -1,0 +1,156 @@
+.chat {
+  width: 100%;
+  height: 9.4375rem;
+  padding: 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: white;
+  border-radius: 7px;
+  cursor: pointer;
+  text-decoration: none;
+
+  .chat-general {
+    display: flex;
+    flex: 1;
+    gap: 25px;
+
+    .chat-rank {
+      width: 3.5rem;
+      height: 4.5rem;
+      padding: 8px 0;
+      background-color: #f2f4ff;
+      color: #3a4374;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: all 0.3s ease-in;
+
+      div {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      svg {
+        color: #4661e6;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+      }
+
+      svg:hover {
+        color: #ad1fea;
+      }
+    }
+
+    .chat-info {
+      width: calc(100% - 3.5rem - 25px);
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 10px;
+
+      .chat-info-title {
+        color: #3a4374;
+        font-weight: 700;
+        font-size: 1.125rem;
+        transition: all 0.3s ease-in;
+      }
+
+      .chat-info-desc {
+        height: 45px;
+        display: flex;
+        align-items: center;
+        color: #647196;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      .chat-tags-container {
+        display: flex;
+        gap: 0.75rem;
+
+        .chat-tag {
+          align-self: flex-start;
+          font-size: 0.8125rem;
+          display: inline;
+          padding: 0.5rem 0.75rem;
+          background: #f2f4ff;
+          color: #4661e6;
+          font-weight: 600;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .chat-comment {
+    width: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+.chat:hover .chat-general .chat-info .chat-info-title {
+  color: #4661e6;
+}
+
+.chat.page {
+  height: auto;
+  padding: 2rem;
+
+  .chat-general {
+    .chat-info {
+      .chat-info-desc {
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .chat {
+    padding: 1rem 2rem;
+    height: 200px;
+    flex-direction: column;
+
+    .chat-general {
+      width: 100%;
+      gap: 10px;
+      flex-direction: column-reverse;
+
+      .chat-info {
+        width: 100%;
+
+        .chat-info-desc {
+          height: auto;
+          font-size: 0.95rem;
+        }
+      }
+
+      .chat-rank.rotated {
+        width: 5rem;
+        height: 2.5rem;
+        flex-direction: row;
+        padding: 0.5rem;
+      }
+
+      .mobile-chat-quantity {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .chat-comment {
+          align-self: center;
+        }
+      }
+    }
+  }
+}

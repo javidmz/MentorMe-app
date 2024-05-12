@@ -1,0 +1,96 @@
+.suggestion-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #3a4374;
+  align-items: center;
+  position: relative;
+  height: 65px;
+  border-radius: 10px;
+  padding: 0 1rem;
+
+  .suggestion-info {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      position: relative;
+      left: auto;
+    }
+  }
+
+  .suggestion-sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    height: 1.25rem;
+    color: gray;
+    position: relative;
+    transition: all 0.3s ease-in;
+
+    > div {
+      height: 1.25rem;
+    }
+
+    > div:first-child {
+      color: #f2f4fe;
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+
+    > div:last-child {
+      color: #f2f4fe;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+  }
+
+  .suggestion-btn {
+    height: 55%;
+    width: 150px;
+    background-color: #ad1fea;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .suggestion-btn:hover {
+    opacity: 0.75;
+  }
+}
+
+@media (max-width: 500px) {
+  .suggestion-container .suggestion-info {
+    width: 55%;
+
+    .dropmenu-container .dropmenu-btn {
+      width: 100px;
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .suggestion-container {
+    padding: 0 0.5rem;
+    border-radius: 0;
+
+    .suggestion-info {
+      width: 190px;
+
+      .dropmenu-container .dropmenu-btn {
+        gap: 0.5rem;
+        width: auto;
+      }
+    }
+  }
+}
+
+.suggestion-container.logged {
+  justify-content: space-between;
+}

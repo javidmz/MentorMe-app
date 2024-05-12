@@ -1,0 +1,183 @@
+.home {
+  position: relative;
+  width: 75%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    .home-img-ad {
+      position: absolute;
+      top: 65px;
+      left: 30px;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+
+      div:nth-child(2) {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .home-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+}
+
+.login-link {
+  position: absolute;
+  right: 0;
+  top: -4.5rem;
+
+  button {
+    outline: none;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 0.625rem;
+    background: #4661e6;
+    color: #f2f4fe;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+  }
+
+  button:disabled,
+  button:hover {
+    background-color: #7c91f9;
+  }
+}
+
+.logged-user-info {
+  color: #3a4374;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.25rem;
+  position: absolute;
+  right: 15px;
+  top: -4.5rem;
+  border: 2px solid #3a4374;
+  padding: 0.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.logged-user-info:hover {
+  background-color: #3a4374;
+  color: white;
+}
+
+@media (max-width: 961px) {
+  .home {
+    width: 85%;
+    flex-direction: column;
+
+    .home-header {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .login-link {
+        position: relative;
+        top: 0;
+      }
+    }
+  }
+
+  .login-link {
+    width: auto;
+  }
+
+  a {
+    width: 175px;
+
+    .logged-user-info {
+      position: relative;
+      width: 100%;
+      top: 0;
+      right: 0;
+
+      .logged-user-info-details {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  .home {
+    a {
+      .logged-user-info {
+        width: auto;
+        position: absolute;
+        top: -4.5rem;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .home {
+    width: 100%;
+    margin-top: 0;
+
+    .home-header {
+      flex-direction: column;
+      align-items: center;
+
+      .home-img-ad {
+        top: 20px;
+        left: 15px;
+      }
+
+      picture {
+        width: 100%;
+
+        img {
+          border-radius: 0;
+        }
+      }
+    }
+
+    a {
+      .logged-user-info {
+        width: auto;
+        position: absolute;
+        top: 20px;
+        right: 15px;
+
+        .logged-user-info-details {
+          max-width: 125px;
+        }
+      }
+    }
+
+    .login-link {
+      top: 20px;
+      right: 15px;
+    }
+  }
+}

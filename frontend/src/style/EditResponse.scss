@@ -1,0 +1,59 @@
+.add-edit-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  textarea {
+    height: 5rem;
+    width: 100%;
+    border-radius: 0.3125rem;
+    background: #f7f8fd;
+    color: #3a4374;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    resize: none;
+    transition: all 0.2s ease-in;
+  }
+
+  textarea:focus {
+    border: 1px solid #4661e6;
+    background: #f7f8fd;
+  }
+
+  .add-edit-footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    color: #647196;
+    font-size: 0.9375rem;
+    font-weight: 400;
+
+    button {
+      width: 7.3125rem;
+      height: 2.75rem;
+      border: none;
+      outline: none;
+      border-radius: 0.625rem;
+      background-color: #ad1fea;
+      color: #f2f4fe;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+    }
+
+    button:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+@media (max-width: 481px) {
+  .add-edit-container {
+    flex-direction: column;
+  }
+}

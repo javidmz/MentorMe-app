@@ -1,0 +1,210 @@
+.registration-container {
+  margin-top: 7vh;
+  display: flex;
+  width: 800px;
+  height: 85vh;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+
+  .form-container {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #f2f4ff;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .sign-in {
+    left: 0;
+    z-index: 2;
+  }
+
+  .sign-in.active {
+    transform: translateX(100%);
+  }
+
+  .sign-up {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .sign-up.active {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.4s;
+  }
+
+  @keyframes show {
+    0%,
+    49.99% {
+      opacity: 0;
+      z-index: 1;
+    }
+
+    50%,
+    100% {
+      opacity: 1;
+      z-index: 5;
+    }
+  }
+
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+
+    .overlay {
+      background: #a890fe;
+      background: -webkit-linear-gradient(to right, #ea8d8d, #a890fe);
+      background: linear-gradient(to right, #ea8d8d, #a890fe);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 0;
+      color: #ffffff;
+      position: relative;
+      left: -100%;
+      height: 100%;
+      width: 200%;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+
+      .overlay-panel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 40px;
+        text-align: center;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+
+        header {
+          font-size: 2rem;
+          margin-bottom: 3rem;
+          padding: 2rem;
+          border: 0.5rem solid white;
+          cursor: pointer;
+        }
+
+        header:hover {
+          opacity: 0.7;
+        }
+
+        div:first-child {
+          font-size: 3rem;
+          font-weight: 700;
+        }
+
+        div:nth-child(2) {
+          font-size: 1.25rem;
+        }
+
+        button {
+          outline: none;
+          border: 1px solid white;
+          padding: 0.8rem 2rem;
+          border-radius: 0.8rem;
+          background: transparent;
+          color: #f2f4fe;
+          font-size: 0.875rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease-in;
+        }
+
+        button:disabled,
+        button:hover {
+          background-color: white;
+          color: #a890fe;
+        }
+      }
+
+      .overlay-left {
+        transform: translateX(-20%);
+      }
+
+      .overlay-right {
+        right: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .overlay-container.active {
+    transform: translateX(-100%);
+
+    .overlay {
+      transform: translateX(50%);
+
+      .overlay-left {
+        transform: translateX(0);
+      }
+
+      .overlay-right {
+        transform: translateX(20%);
+      }
+    }
+  }
+}
+
+.mobile-nav-container {
+  width: 325px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .mobile-login-header {
+    width: 165px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    font-size: 2rem;
+    color: #ad1fea;
+    border: 6px solid #ad1fea;
+    cursor: pointer;
+  }
+
+  .mobile-login-header:hover {
+    opacity: 0.7;
+  }
+
+  .mobile-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    background-color: #f2f4ff;
+    transition: all 0.6s ease-in-out;
+  }
+}
+
+@media (max-width: 961px) {
+  .registration-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 481px) {
+  .mobile-nav-container {
+    width: 275px;
+  }
+}

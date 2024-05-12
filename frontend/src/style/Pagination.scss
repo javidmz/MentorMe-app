@@ -1,0 +1,48 @@
+.pagination {
+  margin: 50px 0 30px;
+  min-width: 300px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4661e6;
+  border-radius: 10px;
+  color: white;
+  font-weight: 800;
+
+  button {
+    width: 100px;
+    height: 100%;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #4661e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+
+  button:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: 1px white solid;
+  }
+
+  button:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px white solid;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+  }
+
+  button:hover {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,55 @@
+.add-reply-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    textarea {
+        height: 5rem;
+        width: 100%;
+        border-radius: 0.3125rem;
+        background: #F7F8FD;
+        color: #3A4374;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        padding: 1rem 1.5rem;
+        outline: none;
+        border: none;
+        resize: none;
+        transition: all .2s ease-in;
+    }
+
+    textarea:focus {
+        border: 1px solid #4661E6;
+        background: #F7F8FD;
+    }
+
+    .add-reply-footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        color: #647196;
+        font-size: 0.9375rem;
+        font-weight: 400;
+
+        button {
+            width: 7.3125rem;
+            height: 2.75rem;
+            border: none;
+            outline: none;
+            border-radius: 0.625rem;
+            background-color: #AD1FEA;
+            color: #F2F4FE;
+            font-size: 0.875rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s ease-in;
+        }
+
+        button:hover {
+            opacity: .75;
+        }
+    }
+
+}
